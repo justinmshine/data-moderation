@@ -88,3 +88,4 @@ class ModerationQueue extends Component
             'contentItems' => $contentItems
         ]);
     }
+}
