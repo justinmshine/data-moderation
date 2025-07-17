@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Define who can view moderation pages
+        // For simplicity, we're allowing user ID 1 or any user with is_admin=true
+        Gate::define('viewModeration', function ($user) {
+            return $user->id === 1 || $user->is_admin;
+        });
     }
 }
